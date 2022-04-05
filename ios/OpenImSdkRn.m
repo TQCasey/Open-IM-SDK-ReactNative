@@ -485,13 +485,13 @@ RCT_EXPORT_METHOD(createImageMessageByURL:(NSDictionary *)sourcePicture bigPictu
 
 RCT_EXPORT_METHOD(createSoundMessage:(NSString *)path duration:(nonnull NSNumber *)duration opid:(NSString *)opid resolver:(RCTPromiseResolveBlock)resolver rejecter:(RCTPromiseRejectBlock)rejecter)
 {
-    NSString *msg = Open_im_sdkCreateSoundMessage(opid,path, (int64_t)duration);
+    NSString *msg = Open_im_sdkCreateSoundMessage(opid,path, [duration longLongValue]);
     resolver(msg);
 }
 
 RCT_EXPORT_METHOD(createSoundMessageFromFullPath:(NSString *)path duration:(nonnull NSNumber *)duration opid:(NSString *)opid resolver:(RCTPromiseResolveBlock)resolver rejecter:(RCTPromiseRejectBlock)rejecter)
 {
-    NSString *msg = Open_im_sdkCreateSoundMessageFromFullPath(opid,path, (int64_t)duration);
+    NSString *msg = Open_im_sdkCreateSoundMessageFromFullPath(opid,path, [duration longLongValue]);
     resolver(msg);
 }
 
@@ -503,13 +503,13 @@ RCT_EXPORT_METHOD(createSoundMessageByURL:(NSDictionary *)soundBaseInfo opid:(NS
 
 RCT_EXPORT_METHOD(createVideoMessage:(NSString *)path type:(NSString *)type duration:(nonnull NSNumber *)duration snapshotPath:(NSString *)snapshotPath opid:(NSString *)opid resolver:(RCTPromiseResolveBlock)resolver rejecter:(RCTPromiseRejectBlock)rejecter)
 {
-    NSString *msg = Open_im_sdkCreateVideoMessage(opid,path, type, (int64_t)duration, snapshotPath);
+    NSString *msg = Open_im_sdkCreateVideoMessage(opid,path, type, [duration longLongValue], snapshotPath);
     resolver(msg);
 }
 
 RCT_EXPORT_METHOD(createVideoMessageFromFullPath:(NSString *)path type:(NSString *)type duration:(nonnull NSNumber *)duration snapshotPath:(NSString *)snapshotPath opid:(NSString *)opid resolver:(RCTPromiseResolveBlock)resolver rejecter:(RCTPromiseRejectBlock)rejecter)
 {
-    NSString *msg = Open_im_sdkCreateVideoMessageFromFullPath(opid,path, type, (int64_t)duration, snapshotPath);
+    NSString *msg = Open_im_sdkCreateVideoMessageFromFullPath(opid,path, type, [duration longLongValue], snapshotPath);
     resolver(msg);
 }
 
